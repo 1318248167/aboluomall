@@ -27,7 +27,8 @@ public class CatalogServiceImpl implements CatalogService {
     //查询一级商品数据
     @Override
     public List<PmsBaseCatalog1> getCatalog1() {
-        return pmsBaseCatalog1Mapper.selectAll();
+        List<PmsBaseCatalog1> pmsBaseCatalog1s = pmsBaseCatalog1Mapper.selectAll();
+        return pmsBaseCatalog1s;
     }
 
     //查询二级商品数据
@@ -37,7 +38,8 @@ public class CatalogServiceImpl implements CatalogService {
         PmsBaseCatalog2 pmsBaseCatalog2 = new PmsBaseCatalog2();
         pmsBaseCatalog2.setCatalog1Id(catalog1Id);
 
-        return pmsBaseCatalog2Mapper.select(pmsBaseCatalog2);
+        List<PmsBaseCatalog2> pmsBaseCatalog2s = pmsBaseCatalog2Mapper.select(pmsBaseCatalog2);
+        return pmsBaseCatalog2s;
     }
 
     //查询三级商品数据
@@ -45,7 +47,8 @@ public class CatalogServiceImpl implements CatalogService {
     public List<PmsBaseCatalog3> getCatalog3(String catalog2Id) {
         PmsBaseCatalog3 pmsBaseCatalog3 = new PmsBaseCatalog3();
         pmsBaseCatalog3.setCatalog2Id(catalog2Id);
-        return pmsBaseCatalog3Mapper.select(pmsBaseCatalog3);
+        List<PmsBaseCatalog3> pmsBaseCatalog3s = pmsBaseCatalog3Mapper.select(pmsBaseCatalog3);
+        return pmsBaseCatalog3s;
     }
 
 }

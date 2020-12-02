@@ -25,20 +25,23 @@ public class CatalogController {
     @RequestMapping("getCatalog1")
     @ResponseBody
     public List<PmsBaseCatalog1> getCatalog1(){
-        return catalogService.getCatalog1();
+        List<PmsBaseCatalog1> catalog1 = catalogService.getCatalog1();
+        return catalog1;
     }
 
     //返回二级商品数据
     @RequestMapping("getCatalog2")
     @ResponseBody
     public List<PmsBaseCatalog2> getCatalog2(String catalog1Id){
-        return catalogService.getCatalog2(catalog1Id);
+        List<PmsBaseCatalog2> catalog2 = catalogService.getCatalog2(catalog1Id);
+        return catalog2;
     }
 
     //返回三级商品数据
     @RequestMapping("getCatalog3")
     @ResponseBody
     public List<PmsBaseCatalog3> getCatalog3(String catalog2Id){
-        return catalogService.getCatalog3(catalog2Id);
+        List<PmsBaseCatalog3> catalog3 = catalogService.getCatalog3(catalog2Id);
+        return catalog3;
     }
 }
