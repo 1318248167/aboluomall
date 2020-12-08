@@ -23,7 +23,6 @@
         <java.version>1.8</java.version>
         <fastjson.version>1.2.46</fastjson.version>
         <dubbo-starter.version>1.0.10</dubbo-starter.version>
-        <!--<dubbo-starter.version>2.7.8</dubbo-starter.version>-->
         <dubbo.version>2.6.5</dubbo.version>
         <zkclient.version>0.10</zkclient.version>
         <mybatis.version>2.1.4</mybatis.version>
@@ -64,12 +63,6 @@
                 <artifactId>spring-boot-starter-dubbo</artifactId>
                 <version>${dubbo-starter.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-spring-boot-starter -->
-            <!--<dependency>-->
-                <!--<groupId>org.apache.dubbo</groupId>-->
-                <!--<artifactId>dubbo-spring-boot-starter</artifactId>-->
-                <!--<version>${dubbo-starter.version}</version>-->
-            <!--</dependency>-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
