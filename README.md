@@ -1,5 +1,18 @@
 # aboluomall
+~~~
+各服务端口号
+amall-user-service  port:8070
+amall-user-web port:8080
 
+amall-manage-service port:8071
+amall-manage-web port:8081
+
+amall-item-service port:8072
+amall-item-web port:8082
+
+amall-search-service port:8073
+amall-search-web port:8083
+~~~
 ##常见异常解决
 
 ~~~

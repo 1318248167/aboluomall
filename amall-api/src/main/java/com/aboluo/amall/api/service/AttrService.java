@@ -5,6 +5,7 @@ import com.aboluo.amall.api.bean.PmsBaseAttrValue;
 import com.aboluo.amall.api.bean.PmsBaseSaleAttr;
 
 import java.util.List;
+import java.util.Set;
 
 public interface AttrService {
     //获取商品属性名列表
@@ -16,4 +17,6 @@ public interface AttrService {
     String saveAttrInfo(PmsBaseAttrInfo pmsBaseAttrInfo);
 
     List<PmsBaseSaleAttr> baseSaleAttrList();
+
+    List<PmsBaseAttrInfo> getAttrValueListByValueId(Set<String> valueIdSet);
 }

@@ -1,9 +1,6 @@
 package com.aboluo.amall.manage.service.impl;
 
-import com.aboluo.amall.api.bean.PmsSkuAttrValue;
-import com.aboluo.amall.api.bean.PmsSkuImage;
-import com.aboluo.amall.api.bean.PmsSkuInfo;
-import com.aboluo.amall.api.bean.PmsSkuSaleAttrValue;
+import com.aboluo.amall.api.bean.*;
 import com.aboluo.amall.api.service.SkuService;
 import com.aboluo.amall.manage.mapper.PmsSkuAttrValueMapper;
 import com.aboluo.amall.manage.mapper.PmsSkuImageMapper;
@@ -12,10 +9,12 @@ import com.aboluo.amall.manage.mapper.PmsSkuSaleAttrValueMapper;
 import com.aboluo.amall.util.RedisUtil;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.Jedis;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.UUID;
 
@@ -136,6 +135,26 @@ public class SkuServiceImpl implements SkuService {
     @Override
     public List<PmsSkuInfo> getSkuSaleAttrValueListBySpu(String productId) {
         List<PmsSkuInfo> pmsSkuInfos = pmsSkuInfoMapper.selectSkuSaleAttrValueListBySpu(productId);
+        return pmsSkuInfos;
+    }
+
+    @Override
+    public List<PmsSkuInfo> getAllSku(String catalog3Id) {
+
+        List<PmsSkuInfo> pmsSkuInfos = pmsSkuInfoMapper.selectAll();
+
+        for (PmsSkuInfo pmsSkuInfo : pmsSkuInfos) {
+
+            String skuId = pmsSkuInfo.getId();
+
+            PmsSkuAttrValue pmsSkuAttrValue  =new PmsSkuAttrValue();
+            pmsSkuAttrValue.setSkuId(skuId);
+            List<PmsSkuAttrValue> pmsSkuAttrValues = pmsSkuAttrValueMapper.select(pmsSkuAttrValue);
+
+            pmsSkuInfo.setSkuAttrValueList(pmsSkuAttrValues);
+
+        }
+
         return pmsSkuInfos;
     }
 }

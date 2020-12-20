@@ -41,6 +41,7 @@
             <groupId>org.apache.xmlgraphics</groupId>
             <artifactId>batik-ext</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
