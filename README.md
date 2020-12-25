@@ -12,6 +12,9 @@ amall-item-web port:8082
 
 amall-search-service port:8073
 amall-search-web port:8083
+
+amall-search-service port:8074
+amall-search-web port:8084
 ~~~
 ##常见异常解决
 
